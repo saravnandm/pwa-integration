@@ -1,0 +1,92 @@
+{
+    "compileOnSave": false,
+    "compilerOptions": {
+        "baseUrl": "./",
+        "outDir": "./dist/out-tsc",
+        "sourceMap": true,
+        "declaration": false,
+        "module": "es2015",
+        "moduleResolution": "node",
+        "emitDecoratorMetadata": true,
+        "experimentalDecorators": true,
+        "target": "es5",
+        "typeRoots": [
+            "node_modules/@types"
+        ],
+        "lib": [
+            "es2018",
+            "dom"
+        ],
+        "paths": {
+            "@wm/build-task": [
+                "node_modules/@wavemaker/app-ng-runtime/build-task/"
+            ],
+            "@wm/mobile-build-task": [
+                "node_modules/@wavemaker/app-ng-runtime/mobile-build-task"
+            ],
+            "@wm/core": [
+                "node_modules/@wavemaker/app-ng-runtime/core"
+            ],
+            "@wm/components/basic": [
+                "node_modules/@wavemaker/app-ng-runtime/components/basic/default"
+            ],
+            "@wm/components/input": [
+                "node_modules/@wavemaker/app-ng-runtime/components/input/default"
+            ],
+            "@wm/components/page": [
+                "node_modules/@wavemaker/app-ng-runtime/components/page/default"
+            ],
+            "@wm/components/dialogs": [
+                "node_modules/@wavemaker/app-ng-runtime/components/dialogs/default"
+            ],
+            "@wm/components/*": [
+                "node_modules/@wavemaker/app-ng-runtime/components/*"
+            ],
+            "@wm/transpiler": [
+                "node_modules/@wavemaker/app-ng-runtime/transpiler"
+            ],
+            "@wm/security": [
+                "node_modules/@wavemaker/app-ng-runtime/security"
+            ],
+            "@swipey": [
+                "node_modules/@wavemaker/app-ng-runtime/swipey"
+            ],
+            "@wm/http": [
+                "node_modules/@wavemaker/app-ng-runtime/http"
+            ],
+            "@wm/oAuth": [
+                "node_modules/@wavemaker/app-ng-runtime/oAuth"
+            ],
+            "@wm/variables": [
+                "node_modules/@wavemaker/app-ng-runtime/variables"
+            ],
+            "@wm/mobile/core": [
+                "node_modules/@wavemaker/app-ng-runtime/mobile/core"
+            ],
+            "@wm/mobile/components": [
+                "node_modules/@wavemaker/app-ng-runtime/mobile/components"
+            ],
+            "@wm/mobile/offline": [
+                "node_modules/@wavemaker/app-ng-runtime/mobile/offline"
+            ],
+            "@wm/mobile/variables": [
+                "node_modules/@wavemaker/app-ng-runtime/mobile/variables"
+            ],
+            "@wm/runtime/base": [
+                "node_modules/@wavemaker/app-ng-runtime/runtime/base"
+            ],
+            "@wm/runtime/dynamic": [
+                "node_modules/@wavemaker/app-ng-runtime/runtime/dynamic"
+            ],
+            "@wm/mobile/runtime": [
+                "node_modules/@wavemaker/app-ng-runtime/mobile/placeholder/runtime"
+            ],
+            "@wm/mobile/runtime-dynamic": [
+                "node_modules/@wavemaker/app-ng-runtime/mobile/placeholder/runtime/dynamic"
+            ]
+        }
+    },
+    "angularCompilerOptions": {
+        "enableIvy": false
+    }
+}

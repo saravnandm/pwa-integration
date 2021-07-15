@@ -1,0 +1,10 @@
+{
+  "/services": {
+    "target": "http://pktqvgj74h4g.cloud.wavemakeronline.com/Tutorial/",
+    "secure": false
+  },
+  "/resources": {
+    "target": "http://pktqvgj74h4g.cloud.wavemakeronline.com/Tutorial/",
+    "secure": false
+  }
+}

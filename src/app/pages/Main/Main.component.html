@@ -1,0 +1,42 @@
+<div wmPage data-role="pageContainer"  name="mainpage" pagetitle="Main" scripts-to-load="node_modules-d3-d3.min.js,node_modules-@wavemaker.com-nvd3-build-nv.d3.min.js,libraries-scripts-datatable-datatable.js,node_modules-jquery-ui-ui-widgets-resizable.js">
+    <header wmHeader partialContainer data-role="page-header" role="banner"  content="header" name="header" height="auto"></header>
+    <section wmTopNav partialContainer data-role="page-topnav" role="region"  name="topnav" content="topnav"></section>
+    <main wmContent data-role="page-content" role="main"  name="content">
+        <div wmPageContent wmSmoothscroll="false"  columnwidth="12" name="mainContent" paddingright="15px" paddingleft="15px"><ng-container  *ngIf="compilePageContent">
+            <div wmLiveTable role="table"  name="EmployeeLiveTable1" dialogid="liveform_dialog_id_1"></div>
+            <div wmChart redrawable  type="Column" title="Leaves Chart" height="250px" iconclass="wi wi-bar-chart" name="chart3" xaxislabel="Months" yaxislabel="Leaves" dataset.bind="Variables.databaseVariable1.dataSet" aggregation="count" groupby="startDate" xaxisdatakey="startDate" yaxisdatakey="id" orderby="startDate:desc" aggregationcolumn="id" datasource.bind="Variables.databaseVariable1"></div>
+            <div wmTable="table_1" wmTableFilterSort wmTableCUD #table_1 data-identifier="table" role="table"  gridfirstrowselect="true" statehandler="none" name="EmployeeTable1" title="Employee List" dataset.bind="Variables.HrdbEmployeeData.dataSet" navigation="On-Demand" editmode="form" showheader="false" datasource.bind="Variables.HrdbEmployeeData" isdynamictable="false" table_reference="table_1">
+                <div wmTableColumn  binding="picurl" caption="Image" widget-type="image" textalignment="center" edit-widget-type="text" type="string" generator="assigned" show="true" readonly="false" index="0" headerIndex="0" customExpression="true"  [formGroup]="table_1.ngform" >
+                    
+                    
+                    
+                    <ng-template #customExprTmpl let-row="row" let-colDef="colDef" let-editRow="editRow" let-deleteRow="deleteRow" let-addNewRow="addNewRow"><div data-col-identifier="picurl">
+                    <img wmPicture alt="image" wmImageCache="true"  picturesource.bind="row.getProperty(&apos;picurl&apos;)" hint.bind="row.getProperty(&apos;picurl&apos;)" class conditionalclass conditionalstyle>
+                </div></ng-template></div>
+                <div wmTableColumn  binding="customField" caption="Name" widget-type="label" edit-widget-type="text" type="string" searchable="false" show="true" readonly="false" index="1" headerIndex="1" customExpression="true"  [formGroup]="table_1.ngform" >
+                    
+                    
+                    
+                    <ng-template #customExprTmpl let-row="row" let-colDef="colDef" let-editRow="editRow" let-deleteRow="deleteRow" let-addNewRow="addNewRow"><div data-col-identifier="customField">
+                    <label wmLabel  caption.bind="row.firstname + &quot; &quot; + row.lastname" class conditionalclass condtionalstyle></label>
+                </div></ng-template></div>
+                <div wmTableColumn  binding="jobTitle" caption="Job Title" edit-widget-type="text" type="string" generator="assigned" show="true" readonly="false" index="2" headerIndex="2"  [formGroup]="table_1.ngform" >
+                    
+                    
+                    
+                    </div>
+                <div wmTableColumn  binding="department.name" caption="Department Name" edit-widget-type="text" related-entity-name="Department" type="string" generator="assigned" readonly="true" show="true" index="3" headerIndex="3"  [formGroup]="table_1.ngform" >
+                    
+                    
+                    
+                    </div>
+                <div wmTableColumn  binding="employeeByManagerId.firstname" caption="Manager" edit-widget-type="text" related-entity-name="Employee" type="string" generator="assigned" readonly="true" show="true" index="4" headerIndex="4"  [formGroup]="table_1.ngform" >
+                    
+                    
+                    
+                    </div>
+            </div>
+        {{onPageContentReady()}}</ng-container></div>
+    </main>
+    <footer wmFooter partialContainer data-role="page-footer" role="contentinfo"  name="footer" content="footer"></footer>
+</div>

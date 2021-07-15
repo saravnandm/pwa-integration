@@ -1,0 +1,17 @@
+<section wmPartial data-role="partial" role="region"  name="topnav" type="topnav"><ng-container  *ngIf="compileContent">
+    <nav wmNavbar data-element-type="wmNavbar" role="navigation"  name="navbar1">
+        <ul wmNav data-element-type="wmNav" data-role="page-header"  name="leftTopLinks" type="navbar" class="navbar-left">
+            <li wmNavItem role="presentation"  name="list_home">
+                <a wmAnchor role="link" data-identifier="anchor"  caption="Home" name="homeLink" iconclass="wi wi-home" click.event="Actions.goToPage_Main.invoke()"></a>
+            </li>
+        </ul>
+        <ul wmNav data-element-type="wmNav" data-role="page-header"  name="rightTopLinks" type="navbar" class="navbar-right">
+            <li wmNavItem role="presentation"  name="list_help">
+                <a class="button fancy-button" (click)="notify()">Notify</a>
+            </li>
+            <li wmNavItem role="presentation"  name="list_logout">
+                <a wmAnchor role="link" data-identifier="anchor"  caption="Logout" name="logoutLink" iconclass="wi wi-sign-out" click.event="Actions.logoutAction.invoke()"></a>
+            </li>
+        </ul>
+    </nav>
+</ng-container></section>

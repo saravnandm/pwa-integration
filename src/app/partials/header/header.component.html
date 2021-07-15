@@ -1,0 +1,12 @@
+<section wmPartial data-role="partial" role="region"  name="header" type="header"><ng-container  *ngIf="compileContent">
+    <div wmLayoutGrid  name="headerlayout">
+        <div wmLayoutGridRow  name="headerrow">
+            <div wmLayoutGridColumn  name="headerleft" verticalalign="middle" columnwidth="8">
+                <img wmPicture alt="image" wmImageCache="true"  picturesource="resources/images/logos/wm-brand-logo.png" name="AppLogo" marginleft="10">
+            </div>
+            <div wmLayoutGridColumn  name="headerright" horizontalalign="right" verticalalign="middle" columnwidth="4" paddingunit="em" paddingtop="1" paddingright="1">
+                <div wmSearch  name="siteSearch" dataset="Home, Services, Products, About US, Contact" ngModel></div>
+            </div>
+        </div>
+    </div>
+</ng-container></section>
