@@ -5,7 +5,7 @@
   
 ## This rule redirects to an external API, signing requests with a secret
 [[redirects]]
-  from = "/resources"
-  to = "http://pktqvgj74h4g.cloud.wavemakeronline.com/Tutorial"
+  from = "/resources/*"
+  to = "http://pktqvgj74h4g.cloud.wavemakeronline.com/Tutorial/resources/:splat"
   status = 200
   
