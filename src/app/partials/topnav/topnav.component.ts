@@ -22,7 +22,7 @@ import { SwPush } from '@angular/service-worker';
     ]
 })
 export class TopnavComponent extends BasePartialComponent {
-    readonly VAPID_PUBLIC_KEY = "BHyoUBN7NtNslQsqHB39-GYg2U5dM0bQXo-_h-sHuPibPkdxUXKWGyruNPHGihCuroz5rLM9_vPiySAtI5d7gyA";
+    readonly VAPID_PUBLIC_KEY = "BBFn_uPDK0L4hc9Lmk1e4yZv4LA2Qi1mjXtGKSOup_g0UMfxRoQgZZFH0riGveUvhBftu_YkshRxgfzKZWEW3BE","privateKey":"3FoX78eSBP271og76tlScreuDigIaGKMzTKvzwpZRGA";
 
     partialName = 'topnav';
     [key: string]: any;
