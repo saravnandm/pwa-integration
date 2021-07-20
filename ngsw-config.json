@@ -6,18 +6,27 @@
       "name": "app",
       "installMode": "prefetch",
       "resources": {
-        "files": [],
-        "urls": [
-          "/services/application/wmProperties.js",
-          "/ng-bundle/**/*"
+        "files": [
+          "/favicon.ico",
+          "/index.html",
+          "/ng-bundle/manifest.json",
+          "/*.css",
+          "/*.js",
+          "/*.json"
         ]
       }
     }, {
       "name": "assets",
       "installMode": "lazy",
       "resources": {
-        "files": [],
-        "urls": []
+        "files": [
+          "/ng-bundle/**/*",
+          "/services/**/*.js",
+          "/*.(eot|svg|cur|jpg|png|webp|gif|otf|ttf|woff|woff2|ani)"
+        ],
+        "urls": [
+          "http://localhost:5000/services/application/wmProperties.js"
+        ]
       }
     }
   ]
