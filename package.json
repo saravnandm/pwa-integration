@@ -4,8 +4,11 @@
     "scripts": {
         "ng": "ng",
         "start": "ng serve",
+        "start:docker": "docker rm wm-pwa; docker run -p 5000:5000 --name wm-pwa -it akhilspillai/wm-pwa",
+        "push:image": "docker image push akhilspillai/wm-pwa:latest",
         "build": "ng build",
         "build:prod": "ng build --prod && npm run postbuild",
+        "dockerize": "docker build --progress plain -t akhilspillai/wm-pwa .",
         "test": "ng test",
         "test_components": "ng t @wm/components/base --code-coverage --watch=false",
         "test_mobile": "ng t @wm/mobile/components/basic --code-coverage --watch=false",
