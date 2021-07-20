@@ -5,6 +5,7 @@
         "ng": "ng",
         "start": "ng serve",
         "build": "ng build",
+        "build:prod": "ng build --prod && npm run postbuild",
         "test": "ng test",
         "test_components": "ng t @wm/components/base --code-coverage --watch=false",
         "test_mobile": "ng t @wm/mobile/components/basic --code-coverage --watch=false",
