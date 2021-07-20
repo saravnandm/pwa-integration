@@ -17,6 +17,7 @@
                             "path": "./wm-custom-webpack.config.js"
                         },
                         "indexTransform": "./build-scripts/index-html-transform.js",
+                        "baseHref": "/",
                         "deployUrl": "ng-bundle/",
                         "outputPath": "dist/ng-bundle",
                         "index": "src/index.html",
