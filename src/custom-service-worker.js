@@ -4,13 +4,13 @@ importScripts("./ngsw-worker.js");
   "use strict";
 
   self.addEventListener("notificationclick", (event) => {
-    const rootUrl = new URL("/", location).href;
+    const rootUrl = new URL("/", location);
     event.notification.close();
     // Enumerate windows, and call window.focus(), or open a new one.
     event.waitUntil(
       clients.matchAll().then((matchedClients) => {
         for (let client of matchedClients) {
-          if (client.url === rootUrl) {
+          if (new URL(client.url).host === rootUrl.host) {
             return client.focus();
           }
         }
