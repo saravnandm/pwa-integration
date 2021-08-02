@@ -6,10 +6,11 @@
       "name": "app",
       "installMode": "prefetch",
       "resources": {
-        "files": [],
+        "files": [
+          "/assets/icons/*.png"
+        ],
         "urls": [
-          "/services/application/wmProperties.js",
-          "/ng-bundle/**/*"
+          "/services/application/wmProperties.js"
         ]
       }
     }, {
