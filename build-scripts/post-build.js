@@ -148,11 +148,22 @@ const addScriptForWMStylesPath = () => {
         fs.copyFileSync('./dist/ng-bundle/ngsw-worker.js', './dist/ngsw-worker.js');
         fs.copyFileSync('./dist/ng-bundle/custom-service-worker.js', './dist/custom-service-worker.js');
         fs.copyFileSync('./dist/ng-bundle/ngsw.json', './dist/ngsw.json');
-        // const iconsDir = './dist/assets/icons';
-        // if (!fs.existsSync(iconsDir)){
-        //     fs.mkdirSync(iconsDir, { recursive: true });
-        // }
-        // copyDir('./dist/ng-bundle/assets/icons', './dist/assets/icons');
+
+
+        const suffix = '/ng-bundle';
+        const fileName = './dist/ngsw.json';
+        const ngswData = JSON.parse(fs.readFileSync(fileName).toString());
+        ngswData.assetGroups = ngswData.assetGroups
+            .map(group => ({ ...group, urls: group.urls.map(url => suffix + url) }));
+        ngswData.hashTable = Object.keys(ngswData.hashTable).reduce((prev, current) => {
+            return {
+                ...prev,
+                [suffix + current]: ngswData.hashTable[current],
+            }
+        }, {})
+        
+        fs.writeFileSync(fileName, JSON.stringify(ngswData, null, 2));
+        
         const contents = await readFile(`./dist/index.html`, `utf8`);
         $ = cheerio.load(contents);
         $('script').attr('defer', 'true');
