@@ -39,6 +39,7 @@ import { initPrefabConfig } from './prefabs/prefab-config';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import { NotificationService } from './services/notification.service';
+import { UpdateService } from './services/update.service';
 
 export const modalModule = ModalModule.forRoot();
 export const routerModule = RouterModule.forRoot(routes, {useHash: true, scrollPositionRestoration: 'top'});
@@ -88,6 +89,7 @@ export const isPrefabInitialized = initPrefabConfig();
         CanDeactivateNgPageGuard,
         LazyLoadScriptsResolve,
         NotificationService,
+        UpdateService
     ],
     bootstrap: [AppComponent]
 })

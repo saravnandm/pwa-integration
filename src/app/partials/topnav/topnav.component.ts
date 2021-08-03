@@ -40,6 +40,18 @@ export class TopnavComponent extends BasePartialComponent {
         initScript(Partial, App, Utils);
     }
 
+    async checkUpdate() {
+        console.log("checking update...");
+        if (this.swUpdate.isEnabled) {
+            console.log("SW supported");
+            this.swUpdate.available.subscribe(() => {
+                if(confirm("New version of the app is available. Select OK to view the update")) {
+                    window.location.reload();
+                }
+            });
+        }        
+    }
+
     async notify() {
         console.log("requesting subscription");
         if (this.swPush.isEnabled) {
