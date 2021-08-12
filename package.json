@@ -5,6 +5,7 @@
         "ng": "ng",
         "start": "ng serve",
         "start:docker": "docker rm wm-pwa; docker run -p 5000:5000 --name wm-pwa -it akhilspillai/wm-pwa",
+        "deploy:prod": "ng build --prod && npm run postbuild && http-server dist --port 8082 -c-1 --proxy http://pktqvgj74h4g.cloud.wavemakeronline.com/Tutorial",
         "start:prod": "http-server dist --port 8082 -c-1 --proxy http://pktqvgj74h4g.cloud.wavemakeronline.com/Tutorial",
         "push:image": "docker image push akhilspillai/wm-pwa:latest",
         "build": "ng build",

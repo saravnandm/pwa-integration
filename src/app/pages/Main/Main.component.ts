@@ -6,7 +6,7 @@ import { initScript } from './Main.component.script';
 import { getVariables } from './Main.component.variables';
 
 import { BasePageComponent } from '@wm/runtime/base';
-import { UpdateService } from 'src/app/services/update.service';
+import { SwUpdate } from '@angular/service-worker';
 
 @Component({
     selector: 'app-page-Main',
@@ -25,15 +25,22 @@ export class MainComponent extends BasePageComponent implements OnInit {
     pageName = 'Main';
     [key: string]: any;
 
-    constructor(public injector: Injector, private sw: UpdateService) {
+    constructor(public injector: Injector, private swUpdate: SwUpdate) {
+        
         super();
         super.init();
 
+        if (this.swUpdate.isEnabled) {
+            this.swUpdate.available.subscribe(() => {
+                if(confirm("New version of the app is available. Select OK to view the update")) {
+                    document.location.reload();
+                }
+            });
+        } 
     }
 
-    ngOnInit(): void {
-        // check the service worker for updates
-        this.sw.checkForUpdates();
+    ngOnInit() {
+              
     }
 
     getVariables() {
